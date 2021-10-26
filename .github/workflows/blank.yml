@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  #Triggers the workflow on push or pull to the main branch
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+  #Allows you to run the github action manually within github
+  workflow_dispatch:
+    
+#A workflow run is made up of one or more job actions
+jobs:
+  # This workflow contains a single job called build
+  build:
+    # The type where the job will run on
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Run a one line script
+        run: echo Hello, World! 
+
+      - name: Run a multi line script
+        run: echo Hello, World! 
